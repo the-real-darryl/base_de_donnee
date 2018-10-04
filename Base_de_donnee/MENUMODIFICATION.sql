@@ -1,0 +1,17 @@
+CLEAR SCREEN
+PROMPT MENU MODIFICATION
+PROMPT 1: Mise a jour de numero de client
+PROMPT 2: Suppression d'un produit
+PROMPT 3: Retourner au menu principal
+ACCEPT ENTRE PROMPT " Entrer une option entre 1 et 3: "
+SET TERM OFF
+COLUMN SCRIPT NEW_VALUE V_SCRIPT
+SELECT CASE '&ENTRE'
+WHEN '1' THEN 'MISEAJOURCLIENT.sql'
+WHEN '2' THEN 'SUPPRESSION.sql'
+WHEN '3' THEN 'MENU.sql'
+ELSE 'MENUMODIFICATION.sql'
+END AS SCRIPT
+FROM DUAL;
+SET TERM ON
+@C:\Users\usager\Desktop\base\PROJET_FINAL2\&V_SCRIPT
